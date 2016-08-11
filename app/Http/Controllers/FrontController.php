@@ -6,13 +6,29 @@ use App\Post;
 
 class FrontController extends Controller
 {
+    /**
+     * Model containing posts
+     * TODO: refactor to model maybe?
+     *
+     * @var Post
+     */
     public $postModel;
 
+    /**
+     * FrontController constructor.
+     *
+     * @param Post $postModel
+     */
     public function __construct(Post $postModel)
     {
         $this->postModel = $postModel;
     }
 
+    /**
+     * show homepage or indexpage of blog
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function home()
     {
         $posts = $this->postModel
@@ -22,6 +38,13 @@ class FrontController extends Controller
         return view('blog.home', compact('posts'));
     }
 
+    /**
+     * Show page with post content based on slug result.
+     *
+     * @param $slug
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function post($slug)
     {
         $post = $this->postModel->withSlug($slug);

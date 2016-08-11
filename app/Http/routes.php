@@ -2,15 +2,13 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Front-end Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| These are all routes for the front-end. These
+| do not need to the Authenticate middleware
 |
 */
-
 Route::group(['middleware' => ['web']], function() {
 
     Route::get('/', 'FrontController@home');
@@ -24,7 +22,15 @@ Route::group(['middleware' => ['web']], function() {
 
 });
 
-
+/*
+|--------------------------------------------------------------------------
+| Back-end Routes
+|--------------------------------------------------------------------------
+|
+| These are all routes for the back-end. In order to
+| access these routes, the user must be logged in.
+|
+*/
 Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get('cms/dashboard', 'Cms\DashboardController@index');
 

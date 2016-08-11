@@ -35,6 +35,15 @@ class Post extends Model
     protected $dates = ['deleted_at', 'created_at', 'updated_at'];
 
 
+    /**
+     * Returns post results based on the postType.
+     *
+     * @param $query
+     * @param $type
+     * @param bool $defaultOrder
+     *
+     * @return mixed
+     */
     public function scopeOfType($query, $type, $defaultOrder = false)
     {
         $q = $query->where('type', self::$types[$type]);
@@ -42,11 +51,26 @@ class Post extends Model
         return (!$defaultOrder) ? $q->orderBy('published_at', 'desc') : $q;
     }
 
+    /**
+     * Returns a model containing the specified slug.
+     *
+     * @param $query
+     * @param $slug
+     *
+     * @return mixed
+     */
     public function scopeWithSlug($query, $slug)
     {
         return $query->where('slug', $slug)->first();
     }
 
+    /**
+     * Returns the published_at value transformed to something like "August 10, 2023"
+     *
+     * @param $value
+     *
+     * @return string
+     */
     public function getPublishedAtAttribute($value)
     {
         if(empty($value)) return $value;
@@ -55,6 +79,7 @@ class Post extends Model
 
         return $carbon->formatLocalized('%B %d, %Y');
     }
+
     /**
      * Get the content, stripped from html, in a shortened string.
      *

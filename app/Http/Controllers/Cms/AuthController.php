@@ -8,11 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * Path to redirect user after successful login.
+     *
+     * @var string
+     */
     public $redirectTo = 'cms/post';
 
+    /**
+     * Location of the login page.
+     *
+     * @var string
+     */
     public $loginPage = 'cms.auth.login';
 
     /**
+     * Show login screen.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -22,6 +33,7 @@ class AuthController extends Controller
     }
 
     /**
+     * Logs users into the application
      *
      * @param LoginUserRequest $requests
      *
@@ -40,6 +52,7 @@ class AuthController extends Controller
     }
 
     /**
+     * Logs user out of the applicaiton.
      *
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 
 trait UniqueSlug
 {
+    /**
+     * Check if Class container Slug has required field before doing anything
+     * TODO: implement Exceptions.
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     */
     public function slug(Request $request)
     {
         if(property_exists($this, 'model')) {
@@ -21,6 +29,13 @@ trait UniqueSlug
         }
     }
 
+    /**
+     * Recursive check if the slug is unique and make unique if not.
+     *
+     * @param $slug
+     * @param int $increment
+     * @return mixed
+     */
     private function checkSlug($slug, $increment = 0)
     {
         $result = $this->model->where('slug', $slug);
