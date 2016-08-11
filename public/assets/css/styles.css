@@ -1,0 +1,927 @@
+/** basics & config **/
+/** fonts **/
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+template,
+[hidden] {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+optgroup {
+  font-weight: bold; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: #2b2b2b; }
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "latothin";
+  color: #2b2b2b;
+  font-size: 18px;
+  background-color: #fff; }
+
+body {
+  width: 100%; }
+
+h1, h2 {
+  font-family: "Avenir Bold"; }
+
+h1 {
+  font-size: 48px; }
+
+header {
+  margin-bottom: 60px; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+/** Attributes **/
+.no-padding {
+  padding-top: 0 !important;
+  paddingleft: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important; }
+
+.full-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-justify {
+  text-align: justify; }
+
+.text-center {
+  text-align: center; }
+
+/** Fonts **/
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2015 */
+@font-face {
+  font-family: 'latoblack';
+  src: url("/assets/fonts/lato/lato-black-webfont.eot");
+  src: url("/assets/fonts/lato/lato-black-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-black-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-black-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-black-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-black-webfont.svg#latoblack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoblack_italic';
+  src: url("/assets/fonts/lato/lato-blackitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-blackitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-blackitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-blackitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-blackitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-blackitalic-webfont.svg#latoblack_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latobold';
+  src: url("/assets/fonts/lato/lato-bold-webfont.eot");
+  src: url("/assets/fonts/lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-bold-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-bold-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-bold-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-bold-webfont.svg#latobold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latobold_italic';
+  src: url("/assets/fonts/lato/lato-bolditalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-bolditalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-bolditalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-bolditalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-bolditalic-webfont.svg#latobold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2015 */
+@font-face {
+  font-family: 'latoitalic';
+  src: url("/assets/fonts/lato/lato-italic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-italic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-italic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-italic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-italic-webfont.svg#latoitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latolight';
+  src: url("/assets/fonts/lato/lato-light-webfont.eot");
+  src: url("/assets/fonts/lato/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-light-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-light-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-light-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-light-webfont.svg#latolight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latolight_italic';
+  src: url("/assets/fonts/lato/lato-lightitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-lightitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-lightitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-lightitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-lightitalic-webfont.svg#latolight_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latomedium';
+  src: url("/assets/fonts/lato/lato-medium-webfont.eot");
+  src: url("/assets/fonts/lato/lato-medium-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-medium-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-medium-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-medium-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-medium-webfont.svg#latomedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2015 */
+@font-face {
+  font-family: 'latomedium_italic';
+  src: url("/assets/fonts/lato/lato-mediumitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-mediumitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-mediumitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-mediumitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-mediumitalic-webfont.svg#latomedium_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoregular';
+  src: url("/assets/fonts/lato/lato-regular-webfont.eot");
+  src: url("/assets/fonts/lato/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-regular-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-regular-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-regular-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-regular-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latosemibold';
+  src: url("/assets/fonts/lato/lato-semibold-webfont.eot");
+  src: url("/assets/fonts/lato/lato-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-semibold-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-semibold-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-semibold-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-semibold-webfont.svg#latosemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latosemibold_italic';
+  src: url("/assets/fonts/lato/lato-semibolditalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-semibolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-semibolditalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-semibolditalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-semibolditalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-semibolditalic-webfont.svg#latosemibold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2015 */
+@font-face {
+  font-family: 'latohairline';
+  src: url("/assets/fonts/lato/lato-hairline-webfont.eot");
+  src: url("/assets/fonts/lato/lato-hairline-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-hairline-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-hairline-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-hairline-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-hairline-webfont.svg#latohairline") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latohairline_italic';
+  src: url("/assets/fonts/lato/lato-hairlineitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-hairlineitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-hairlineitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-hairlineitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-hairlineitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-hairlineitalic-webfont.svg#latohairline_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoheavy';
+  src: url("/assets/fonts/lato/lato-heavy-webfont.eot");
+  src: url("/assets/fonts/lato/lato-heavy-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-heavy-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-heavy-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-heavy-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-heavy-webfont.svg#latoheavy") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoheavy_italic';
+  src: url("/assets/fonts/lato/lato-heavyitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-heavyitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-heavyitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-heavyitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-heavyitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-heavyitalic-webfont.svg#latoheavy_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2015 */
+@font-face {
+  font-family: 'latothin';
+  src: url("/assets/fonts/lato/lato-thin-webfont.eot");
+  src: url("/assets/fonts/lato/lato-thin-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-thin-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-thin-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-thin-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-thin-webfont.svg#latothin") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latothin_italic';
+  src: url("/assets/fonts/lato/lato-thinitalic-webfont.eot");
+  src: url("/assets/fonts/lato/lato-thinitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato/lato-thinitalic-webfont.woff2") format("woff2"), url("/assets/fonts/lato/lato-thinitalic-webfont.woff") format("woff"), url("/assets/fonts/lato/lato-thinitalic-webfont.ttf") format("truetype"), url("/assets/fonts/lato/lato-thinitalic-webfont.svg#latothin_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* #### Generated By: http://www.cufonfonts.com #### */
+@font-face {
+  font-family: 'Avenir Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-Cn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Demi';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Demi"), url("/assets/fonts/avenir/AvenirNextLTPro-Demi.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Demi Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Demi Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-DemiCn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Heavy Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Heavy Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-HeavyCn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Medium Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Medium Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-MediumCn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Regular"), url("/assets/fonts/avenir/AvenirNextLTPro-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Ultra Light Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Ultra Light Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-UltLtCn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Bold"), url("/assets/fonts/avenir/AvenirNextLTPro-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Bold Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Bold Condensed"), url("/assets/fonts/avenir/AvenirNextLTPro-BoldCn.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Bold Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Bold Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-BoldCnIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-CnIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Demi Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Demi Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-DemiCnIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Demi Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Demi Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-DemiIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Heavy Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Heavy Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-HeavyCnIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-It.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Medium Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Medium Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-MediumCnIt.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Avenir Ultra Light Condensed Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Ultra Light Condensed Italic"), url("/assets/fonts/avenir/AvenirNextLTPro-UltLtCnIt.woff") format("woff"); }
+
+/** navigation bar **/
+nav {
+  padding: 10px 10px 5px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5); }
+
+nav .logo {
+  color: #2b2b2b;
+  font-size: 40px;
+  font-family: "Avenir Bold"; }
+
+nav .logo:hover {
+  text-decoration: underline; }
+
+nav .container span {
+  font-size: 14px;
+  font-family: "latothin"; }
+
+/** header (home) **/
+header.header-home {
+  border-bottom: 10px solid #2b2b2b;
+  padding: 30px; }
+
+header.header-home h1 {
+  margin: 30px;
+  font-size: 140px; }
+
+header.header-home h1 span {
+  display: block;
+  margin: -20px auto 0;
+  max-width: 300px;
+  font-family: "latothin";
+  font-size: 24px;
+  font-style: italic; }
+
+/** articles **/
+article.article-home {
+  margin-bottom: 40px; }
+
+article.article-home h2 {
+  font-size: 48px; }
+
+article.article-home span {
+  display: block;
+  margin-top: -5px;
+  margin-bottom: 30px;
+  font-size: 12px; }
+
+article.article-home a {
+  text-decoration: none; }
+
+article.article-home .read-more-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #2b2b2b;
+  color: #fff; }
+
+article.article-home .read-more-btn:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 2px;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform .34s ease; }
+
+article.article-home .read-more-btn:hover {
+  text-decoration: none; }
+  article.article-home .read-more-btn:hover:before {
+    transform: translateX(0%);
+    transition: transform .34s ease; }
+
+/** mainly post page stuff **/
+header.header-post {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden; }
+
+header.header-post h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 900px;
+  z-index: 10;
+  font-size: 64px;
+  border-bottom: 10px solid;
+  transform: translate(-50%, -50%); }
+
+.full-background {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+header.header-post .full-background:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.pagination, .pager {
+  padding: 20px;
+  text-align: center; }
+  .pagination li, .pager li {
+    min-width: 20px;
+    margin: 0 5px;
+    font-size: 50px;
+    display: inline-block; }
+  .pagination li.disabled, .pager li.disabled {
+    cursor: default;
+    opacity: .2; }
+  .pagination li a, .pager li a {
+    display: block;
+    transform: translateX(0);
+    transition: transform .34s ease; }
+  .pagination a:hover, .pager a:hover {
+    text-decoration: none; }
+  .pagination li:hover + a, .pager li:hover + a {
+    transform: translateX(-30%);
+    transition: transform .34s ease; }
+  .pagination li:hover a, .pager li:hover a {
+    transform: translateX(30%);
+    transition: transform .34s ease; }
+
+.simditor .simditor-body, .editor-style, .editor-content {
+  line-height: 1.6;
+  outline: none;
+  word-wrap: break-word; }
+  .simditor .simditor-body > :first-child, .editor-style > :first-child, .editor-content > :first-child {
+    margin-top: 0 !important; }
+  .simditor .simditor-body a, .editor-style a, .editor-content a {
+    color: #4298BA;
+    text-decoration: none;
+    word-break: break-all; }
+  .simditor .simditor-body a:visited, .editor-style a:visited, .editor-content a:visited {
+    color: #4298BA; }
+  .simditor .simditor-body a:hover, .editor-style a:hover, .editor-content a:hover {
+    color: #0F769F; }
+  .simditor .simditor-body a:active, .editor-style a:active, .editor-content a:active {
+    color: #9E792E; }
+  .simditor .simditor-body a:hover, .simditor .simditor-body a:active, .editor-style a:hover, .editor-style a:active, .editor-content a:hover, .editor-content a:active {
+    outline: 0; }
+  .simditor .simditor-body h1, .simditor .simditor-body h2, .simditor .simditor-body h3, .simditor .simditor-body h4, .simditor .simditor-body h5, .simditor .simditor-body h6, .editor-style h1, .editor-style h2, .editor-style h3, .editor-style h4, .editor-style h5, .editor-style h6, .editor-content h1, .editor-content h2, .editor-content h3, .editor-content h4, .editor-content h5, .editor-content h6 {
+    font-weight: normal;
+    margin: 40px 0 20px; }
+  .simditor .simditor-body h1, .editor-style h1, .editor-content h1 {
+    font-size: 24px; }
+  .simditor .simditor-body h2, .editor-style h2, .editor-content h2 {
+    font-size: 22px; }
+  .simditor .simditor-body h3, .editor-style h3, .editor-content h3 {
+    font-size: 20px; }
+  .simditor .simditor-body h4, .editor-style h4, .editor-content h4 {
+    font-size: 18px; }
+  .simditor .simditor-body h5, .editor-style h5, .editor-content h5 {
+    font-size: 16px; }
+  .simditor .simditor-body h6, .editor-style h6, .editor-content h6 {
+    font-size: 16px; }
+  .simditor .simditor-body p, .simditor .simditor-body div, .editor-style p, .editor-style div, .editor-content p, .editor-content div {
+    word-wrap: break-word;
+    margin: 0 0 15px 0;
+    word-wrap: break-word; }
+  .simditor .simditor-body b, .simditor .simditor-body strong, .editor-style b, .editor-style strong, .editor-content b, .editor-content strong {
+    font-weight: bold; }
+  .simditor .simditor-body i, .simditor .simditor-body em, .editor-style i, .editor-style em, .editor-content i, .editor-content em {
+    font-style: italic; }
+  .simditor .simditor-body u, .editor-style u, .editor-content u {
+    text-decoration: underline; }
+  .simditor .simditor-body strike, .simditor .simditor-body del, .editor-style strike, .editor-style del, .editor-content strike, .editor-content del {
+    text-decoration: line-through; }
+  .simditor .simditor-body ul, .simditor .simditor-body ol, .editor-style ul, .editor-style ol, .editor-content ul, .editor-content ol {
+    list-style: disc outside none;
+    margin: 15px 0;
+    padding: 0 0 0 40px;
+    line-height: 1.6; }
+    .simditor .simditor-body ul ul, .simditor .simditor-body ul ol, .simditor .simditor-body ol ul, .simditor .simditor-body ol ol, .editor-style ul ul, .editor-style ul ol, .editor-style ol ul, .editor-style ol ol, .editor-content ul ul, .editor-content ul ol, .editor-content ol ul, .editor-content ol ol {
+      padding-left: 30px; }
+    .simditor .simditor-body ul ul, .simditor .simditor-body ol ul, .editor-style ul ul, .editor-style ol ul, .editor-content ul ul, .editor-content ol ul {
+      list-style: circle outside none; }
+      .simditor .simditor-body ul ul ul, .simditor .simditor-body ol ul ul, .editor-style ul ul ul, .editor-style ol ul ul, .editor-content ul ul ul, .editor-content ol ul ul {
+        list-style: square outside none; }
+  .simditor .simditor-body ol, .editor-style ol, .editor-content ol {
+    list-style: decimal; }
+  .simditor .simditor-body blockquote, .editor-style blockquote, .editor-content blockquote {
+    border-left: 6px solid #ddd;
+    padding: 5px 0 5px 10px;
+    margin: 15px 0 15px 15px; }
+    .simditor .simditor-body blockquote > :first-child, .editor-style blockquote > :first-child, .editor-content blockquote > :first-child {
+      margin-top: 0; }
+  .simditor .simditor-body code, .editor-style code, .editor-content code {
+    display: inline-block;
+    padding: 0 4px;
+    margin: 0 5px;
+    background: #eeeeee;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: 'monaco', 'Consolas', "Liberation Mono", Courier, monospace; }
+  .simditor .simditor-body pre, .editor-style pre, .editor-content pre {
+    padding: 10px 5px 10px 10px;
+    margin: 15px 0;
+    display: block;
+    line-height: 18px;
+    background: #F0F0F0;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: 'monaco', 'Consolas', "Liberation Mono", Courier, monospace;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto; }
+    .simditor .simditor-body pre code, .editor-style pre code, .editor-content pre code {
+      display: block;
+      padding: 0;
+      margin: 0;
+      background: none;
+      border-radius: 0; }
+  .simditor .simditor-body hr, .editor-style hr, .editor-content hr {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+    padding: 0; }
+  .simditor .simditor-body table, .editor-style table, .editor-content table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 15px 0; }
+    .simditor .simditor-body table thead, .editor-style table thead, .editor-content table thead {
+      background-color: #f9f9f9; }
+    .simditor .simditor-body table td, .simditor .simditor-body table th, .editor-style table td, .editor-style table th, .editor-content table td, .editor-content table th {
+      min-width: 40px;
+      height: 30px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+      padding: 2px 4px;
+      text-align: left;
+      box-sizing: border-box; }
+      .simditor .simditor-body table td.active, .simditor .simditor-body table th.active, .editor-style table td.active, .editor-style table th.active, .editor-content table td.active, .editor-content table th.active {
+        background-color: #ffffee; }
+  .simditor .simditor-body img, .editor-style img, .editor-content img {
+    margin: 0 5px;
+    vertical-align: middle; }
+
+/*# sourceMappingURL=styles.css.map */

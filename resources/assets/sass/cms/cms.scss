@@ -1,0 +1,130 @@
+/** basics & config **/
+@import 'config/_variables';
+@import 'config/normalize';
+@import 'config/_basics';
+
+/** Fonts **/
+@import 'fonts/_lato';
+@import 'fonts/_avenir';
+
+/** navigation bar **/
+nav {
+	position:fixed;
+	top:0;width:100%; z-index:100;
+	background-color: #f1f1f1;
+	padding:10px 10px 5px;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0 , 0, .5);
+}
+
+nav .logo {
+	color:$font-color-primary;
+	font-size:40px;
+	font-family: $font-header;
+}
+
+
+nav .logo span {
+	font-size: 14px;
+	font-family: $font-primary;
+}
+ul.option-menu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width:100%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+ul.option-menu > li {
+	margin:0 20px;
+}
+
+ul.option-menu > li a,
+ul.option-menu > li a:visited {
+	font-size:14px;
+	font-family: $font-secondary;
+	color:$font-color-secondary;
+}
+ul.action-list {
+	z-index:10;
+	top:61px;
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	background: white;
+}
+ul.action-list a {
+	margin: 0 5px;
+	font-size: 14px;
+	font-size:14px;
+	font-family: $font-secondary;
+	color:$font-color-secondary;
+}
+.main-panel {
+	width: 100%;
+}
+/** editor **/
+.simditor .simditor-body, .editor-style, .simditor-placeholder {
+	//font-family: latothin !important;
+}
+.simditor {
+	border:none;
+}
+.simditor-wrapper, .simditor-toolbar {
+	background-color:$color-background-primary !important;
+}
+.simditor .simditor-wrapper.toolbar-floating .simditor-toolbar {
+	box-shadow: 0 9px 1px -8px rgba(0, 0, 0, 0.1)
+}
+
+.form-editor {
+	padding:30px 0 0;
+
+	input[type='datetime'] {
+		font-size: 13px;
+	}
+}
+form {
+	*:focus {
+		outline:none;
+	}
+	input[type="text"],
+	input[type="datetime"],
+	input[type="password"]{
+		padding:10px;
+		width:100%;
+		border:none;
+		border-bottom:1px solid lightgrey;
+		background: none;
+		margin-bottom:10px;
+		transition:border .4s ease;
+		&:focus {
+			outline: none;
+			border-bottom: solid 1px #969696;
+			transition:border .4s ease;
+		}
+	}
+}
+.toastbar.show-toast {
+	display:block;
+	transform:translateY(0);
+	transition: transform .5s ease;
+}
+.toastbar {
+	z-index:101;
+	padding:15px 0;
+	position:fixed;
+	width:100%;
+	background-color:#222222;
+	bottom:0;
+	transform:translateY(100%);
+	transition: transform .5s ease;
+}
+
+.toastbar .toastbar-text {
+	font-size: 18px;
+	font-family: latothin;
+	color:#2ebaff;
+}
+
