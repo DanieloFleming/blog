@@ -16,13 +16,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should not be displayed (when model is echoed).
      *
      * @var array
      */
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    protected $guard = 'users';
 }

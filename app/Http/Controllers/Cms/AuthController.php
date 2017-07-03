@@ -52,7 +52,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Logs user out of the applicaiton.
+     * Logs user out of the application.
      *
      * @return \Illuminate\Http\RedirectResponse
      */

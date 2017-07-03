@@ -15,8 +15,6 @@ class PostSeeder extends Seeder
 
         $dummyData = [];
 
-
-
         for ($i = 0; $i < 3; $i++) {
 
             array_push($dummyData, [

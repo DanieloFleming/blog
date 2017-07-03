@@ -49,6 +49,7 @@ header.header-home h1 span {
 /** articles **/
 article.article-home {
 	margin-bottom:40px;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 article.article-home h2 {
@@ -83,7 +84,6 @@ article.article-home .read-more-btn:before {
 	left:0;
 	bottom:2px;
 	background-color: $color-secondary;
-	//opacity: .4;
 	transform:translateX(-100%);
 	transition:transform .34s ease;
 
@@ -113,12 +113,12 @@ header.header-post h1 {
 	max-width: 900px;
 	z-index:10;
 	font-size: 64px;
-	//color:white;
+	color:white;
 	border-bottom: 10px solid;
 	@include translate(-50%, -50%);
 }
 .full-background {
-	display:none;
+	//display:none;
 	position:absolute;
 	width:100%;
 	height:100%;
@@ -137,18 +137,26 @@ header.header-post .full-background:after {
 	top: 0;
 	background-color:rgba(0, 0, 0, .6);
 }
+.pager li, .pagination li {
+	font-size : 50px;
+	min-width : 20px;
+}
 
-.pagination, .pager {
+.pagination, .pager, .post-pager {
+	margin-top:60px;
 	padding: 20px;
 	text-align: center;
 
 	li {
-		min-width:20px;
-		margin:0 5px;
-		font-size: 50px;
 		display:inline-block;
+		vertical-align: top;
 	}
 
+	li.divider {
+		width: 3px;
+		height: 31px;
+		background: black
+	}
 	li.disabled {
 		cursor: default;
 		opacity: .2;
@@ -157,18 +165,49 @@ header.header-post .full-background:after {
 		display:block;
 		transform:translateX(0);
 		transition:transform .34s ease;
+		font-weight: bold;
 	}
 	a:hover {
 		text-decoration: none;
 	}
 
-	li:hover + a {
-		transform:translateX(-30%);
+	li:first-child:hover a {
+		transform:translateX(-10px);
 		transition:transform .34s ease;
 	}
 
 	li:hover a {
-		transform:translateX(30%);
+		transform:translateX(10px);
 		transition:transform .34s ease;
 	}
+}
+
+.post-pager {
+	position: relative;
+	padding-left:5px;
+	padding-right:5px;
+	li {
+		width:48%;
+		text-transform: lowercase;
+	}
+
+	li.previous span, li.next span{
+		font-size:12px;
+		font-weight: bold;
+		display:block;
+		font-family: latobold;
+	}
+	li.previous {  text-align:right }
+	li.next { text-align: left }
+}
+footer {
+	max-width:900px;
+	margin:40px auto 0;
+	padding:20px 0 10px;
+	border-top:1px solid #ececec;
+}
+footer p {
+	font-family: latobold;
+	font-weight:bold;
+	font-size:10px;
 }

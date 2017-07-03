@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Pagination\Paginator;
 
 class FrontController extends Controller
 {
@@ -25,7 +26,7 @@ class FrontController extends Controller
     }
 
     /**
-     * show homepage or indexpage of blog
+     * show homepage or index page of blog
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

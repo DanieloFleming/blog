@@ -1,6 +1,7 @@
 a, a:active, a:visited {
 	text-decoration: none;
 	color:$font-color-primary;
+	display: inline-block;
 }
 a:hover {
 	text-decoration: underline;
@@ -31,8 +32,8 @@ header {
 .container {
 	max-width:900px;
 	margin:0 auto;
-	padding-left:3rem;
-	padding-right:3rem;
+	padding-left:2rem;
+	padding-right:2rem;
 }
 
 /** Attributes **/
@@ -42,6 +43,7 @@ header {
 	padding-right:0 !important;
 	padding-bottom:0 !important;
 }
+
 .full-background {
 	position:absolute;
 	width:100%;

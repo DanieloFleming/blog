@@ -470,6 +470,7 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
 
 .simditor .simditor-body, .editor-style, .editor-content {
+  font-size: 12pt;
   line-height: 1.6;
   outline: none;
   word-wrap: break-word; }

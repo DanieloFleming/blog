@@ -31,12 +31,18 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
+    /**
+     * Path to view
+     *
+     * @var string
+     */
     protected $loginView = 'cms/auth/login';
 
+
     protected $username = 'username';
+
     /**
      * Create a new authentication controller instance.
-     *
      */
     public function __construct()
     {

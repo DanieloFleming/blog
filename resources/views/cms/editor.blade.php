@@ -1,35 +1,43 @@
 @extends('cms.layouts.main')
 @section('content')
+    <?php $showDelete = ($data->id) ? 'inline-block' : 'none';?>
+    <div>
+        <ul class="list-horizontal action-list">
+            <li><a href="#" class="action-link action-publish" data-action="published">publish</a> | </li>
+            <li><a href="#" class="action-link action-draft" data-action="draft">draft</a> | </li>
 
-    <ul class="list-horizontal action-list">
-        <li><a href="#" class="action-link action-publish" data-action="published">publish</a> </li>
-        <li><a href="#" class="action-link action-draft" data-action="draft">draft</a> </li>
-        <?php $showDelete = ($data->id) ? 'inline-block' : 'none';?>
-            <li style="display:{{$showDelete}}"><a href="/cms/post/delete/{{$data->id}}" class="action-delete" data-action="delete">trash</a> </li>
+            <li style="display:{{$showDelete}}">
+                <a href="/cms/post/delete/{{$data->id}}" style="color:red" class="action-delete" data-action="delete">delete</a>
+            </li>
+        </ul>
+    </div>
 
-    </ul>
     <div class="container" style="margin-top: 40px">
         <form class="form-editor" method="post" action="/cms/post/store/">
-            <input type="hidden" name="_token" class="editor-field field-token" value="{{csrf_token() }}" />
+            <input type="hidden" name="_token" class="editor-field field-token" value="{{csrf_token() }}"/>
             <input type="hidden" name="id" value="{{$data->id}}" class="editor-field field-id"/>
             <input type="hidden" name="type" value="{{$data->type}}" class="editor-field field-type"/>
-            <input type="text" name="title" value="{{$data->title}}" placeholder="Enter a title here..." class="editor-field field-title"/>
+            <input type="text" name="title" value="{{$data->title}}" placeholder="Enter a title here..."
+                   class="editor-field field-title"/>
 
-            <input type="text" name="slug" value="{{$data->slug}}" placeholder="slug-is-auto-generated..."class="editor-field field-slug"/>
+            <input type="text" name="slug" value="{{$data->slug}}" placeholder="slug-is-auto-generated..."
+                   class="editor-field field-slug"/>
 
-            <input type="datetime" name="published_at" value="{{$data->published_at}}" placeholder="open datepicker..."class="editor-field field-published"/>
+            <input type="datetime" name="published_at" value="{{$data->published()}}" placeholder="open datepicker..."
+                   class="editor-field field-published"/>
 
-            <textarea id="ss" class="editor-field field-content" name="content" placeholder="Share a new story with the world..." autofocus>{{$data->content}}</textarea>
+            <textarea id="ss" class="editor-field field-content" name="content"
+                      placeholder="Share a new story with the world..." autofocus>{{$data->content}}</textarea>
         </form>
     </div>
 
     <script>
 
-        var Editorium = (function() {
+        var Editorium = (function () {
             var Api = {
                 slug: {
                     type: "GET",
-                    url: '/cms/post/slug',
+                    url: '/cms/post/slug'
                 },
                 store: {
                     type: "POST",
@@ -82,31 +90,34 @@
             var DatePicker = new Pikaday({
                 field: document.querySelector('.field-published'),
                 format: 'MMMM Do, YYYY',
-                firstDay : 1,
+                firstDay: 1,
             });
 
-            var TextEditor = (function(){
+            var TextEditor = (function () {
                 Simditor.locale = 'en-US';
 
                 var editor = new Simditor({
                     textarea: $('#ss'),
                     toolbar: ['title', '|', 'bold', 'italic', 'underline',
-                        'strikethrough', '|', 'fontScale', 'color', 'alignment', '|','ol',
-                        'ul', 'blockquote',  'code', 'table', 'link',
-                        'image', 'hr', 'indent', 'outdent', 'html' ,
+                        'strikethrough', '|', 'fontScale', 'color', 'alignment', '|', 'ol',
+                        'ul', 'blockquote', 'code', 'table', 'link',
+                        'image', 'hr', 'indent', 'outdent', 'html',
                     ],
+                    allowedStyles: {
+                        img: ['width', 'max-width', 'margin']
+                    },
                     toolbarFloatOffset: 99
                 });
             })();
 
-            var StoreActions = (function(){
+            var StoreActions = (function () {
                 var actionLinks = {};
                 var idField = document.querySelector('[name=id]');
 
                 var _addEvents = function _addEvents() {
-                    document.querySelectorAll('.action-link').forEach(function(element) {
+                    document.querySelectorAll('.action-link').forEach(function (element) {
                         var actionType = element.dataset.action;
-                            actionLinks[actionType] = element;
+                        actionLinks[actionType] = element;
 
                         element.addEventListener('click', _handleClick);
                     });
@@ -122,10 +133,10 @@
                     doApiCall(Api.store, data, _handleSuccess);
                 };
 
-                var _getFormData = function(postType) {
+                var _getFormData = function (postType) {
                     var data = {};
 
-                    $('.form-editor').serializeArray().forEach( function(obj){
+                    $('.form-editor').serializeArray().forEach(function (obj) {
                         data[obj.name] = obj.value;
                     });
 
@@ -135,7 +146,7 @@
                     return data;
                 };
 
-                var _getDateValue = function() {
+                var _getDateValue = function () {
                     var d = new Date();
                     var time = moment(d.getHours() + ':' + d.getMinutes(), "h:m").format('hh:mm:ss');
                     var date = DatePicker.getMoment().format('YYYY-MM-DD');
@@ -144,11 +155,11 @@
                 };
 
                 function _handleSuccess(model) {
-                    if(idField.value.toString().trim() == "") {
-                        if(model.type == 'draft') {
+                    if (idField.value.toString().trim() == "") {
+                        if (model.type == 'draft') {
                             actionLinks['draft'].innerHTML = 'update draft+';
                             actionLinks['published'].innerHTML = 'publish';
-                        } else if(model.type =='published') {
+                        } else if (model.type == 'published') {
                             actionLinks['published'].innerHTML = 'update';
                             actionLinks['draft'].innerHTML = 'draft';
                         }
@@ -161,30 +172,30 @@
                 _addEvents();
             })();
 
-            var ToastBar = (function(){
+            var ToastBar = (function () {
 
                 var bar = document.querySelector('.toastbar');
                 var text = bar.querySelector('.toastbar-text');
                 var timer;
 
-                var _showMessage = function(message) {
+                var _showMessage = function (message) {
                     text.innerHTML = message;
                     bar.classList.add('show-toast');
                     timer = window.setTimeout(_hideToast, 2000);
                 }
 
-                var _hideToast = function() {
+                var _hideToast = function () {
                     window.clearTimeout(timer);
                     bar.classList.remove('show-toast');
                     bar.addEventListener('transitionend', _reset);
                 }
 
-                var _reset = function() {
+                var _reset = function () {
                     bar.removeEventListener('transitionend', _reset);
                 }
 
                 return {
-                    showMessage : _showMessage
+                    showMessage: _showMessage
                 }
             })();
 
@@ -203,7 +214,7 @@
             }
         });
 
-        $(document).ready(function(){
+        $(document).ready(function () {
             Editorium();
         })
     </script>

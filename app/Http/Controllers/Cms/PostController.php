@@ -10,7 +10,6 @@ use App\Post;
 
 class PostController extends Controller {
 
-    use UniqueSlug;
 
     const TYPE_PUBLISHED = 'published';
     const TYPE_DRAFT = 'draft';
@@ -22,7 +21,24 @@ class PostController extends Controller {
         self::TYPE_DRAFT => Post::TYPE_DRAFT
     ];
 
+    /**
+     * Model for the controller.
+     *
+     * @var Post
+     */
     public $model;
+
+    /**
+     * redirect url.
+     *
+     * @var string
+     */
+    public $redirectTo = 'cms/post';
+
+    /**
+     * Trait used for checking and creating unique slugs
+     */
+    use UniqueSlug;
 
     /**
      * PostController constructor.
@@ -36,6 +52,7 @@ class PostController extends Controller {
 
     /**
      * Show index page with post bases on "type" parameter.
+     *
      *
      * @param Request $request
      *
@@ -51,7 +68,7 @@ class PostController extends Controller {
     }
 
     /**
-     * Show create post editor.
+     * Show post-editor using empty model as simplified null object pattern.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -63,7 +80,7 @@ class PostController extends Controller {
     }
 
     /**
-     * Open post editor with post bases on given id.
+     * Open post-editor with post bases on given id.
      *
      * @param $id
      *
@@ -85,13 +102,11 @@ class PostController extends Controller {
      */
     public function store(Request $request)
     {
-        $postData = $request->except('_token');
-
         $model = $this->model->findOrNew($request->get('id'));
 
-        $model->fill($postData);
+        $postData = $request->except('_token');
 
-        $model->save();
+        $model->fill($postData)->save();
 
         return $this->handleResponse($request, $model);
     }
@@ -112,7 +127,7 @@ class PostController extends Controller {
 
     /**
      * Return response based on $request->type
-     * TODO: remove ajax check and create seperate Controller for this.
+     * TODO: remove ajax check and create separate (Api)Controller for this.
      *
      * @param $request
      * @param $response

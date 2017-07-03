@@ -15,7 +15,7 @@
         @foreach($posts as $post)
             <article class="article-home">
                 <a href="post/{{ $post->slug }}"><h1>{{ $post->title }}</h1></a>
-                <span>{{$post->published_at}}</span>
+                <span>{{$post->published()}}</span>
                 <div class="editor-content text-left"> {!! $post->excerpt() !!}</div>
                 <a class="read-more-btn" href="post/{{ $post->slug }}">Read More</a>
             </article>
